@@ -1,0 +1,46 @@
+body {
+	font: 16px/26px "Trebuchet MS",sans-serif;
+	overflow-x: hidden;
+	background: #dcdedc url("../images/bg1.jpg") no-repeat scroll center top;
+	color: #000;
+	margin: 0 auto;
+	width: 1024px;
+	text-align: center;
+	position: relative;
+}
+
+header {
+	background: #808080 none repeat scroll 0 0;
+	color: #fff;
+	margin-bottom: 20px;
+	min-height: 100px;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
+form {
+	padding-top: 100px;
+}
+
+h1, h2 {
+	padding-top: 10px;
+	margin-bottom: 7px;
+}
+
+input[type=submit]{
+	padding: 10px; 
+	font-size: 16px;
+}
+
+input[type=radio]{
+margin-left: 20px;
+}
+
+#survey div {
+	margin: 20px 10px 10px;
+}
+
+#survey-form, #survey-results{
+	background: #fff;
+}
