@@ -19,7 +19,7 @@
 		if ((itemNumber) > 2) {
                 $("#statistics").prop("disabled", false);
             } 	
-		 		
+			
 				
 		//event		
 		$('#submit').click(function(e) {
@@ -61,7 +61,6 @@
 				alert ( "Please answer all questions!" );		
 			};
 		});		    
-		
 	});
  
 	
