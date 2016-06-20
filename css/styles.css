@@ -28,7 +28,7 @@ h1, h2 {
 	margin-bottom: 7px;
 }
 
-input[type=submit]{
+button{
 	padding: 10px; 
 	font-size: 16px;
 }
@@ -47,5 +47,13 @@ input[type=radio]{
 
 #survey-results{
 	width:100%;
-	min-height:550px;
+	overflow: hidden;
+}
+
+/* charts */
+
+.charts{
+	width:49%;
+	height:300px;
+	float:left;
 }

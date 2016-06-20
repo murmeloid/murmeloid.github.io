@@ -1,4 +1,6 @@
-
+	//disable statistics button
+	$("#statistics").prop("disabled", true);
+	
 	//check if obj exists, get the last item number
     function getItemNumber() {
 		var itemNumber = 0;
@@ -13,25 +15,23 @@
 	};
 				  	
 	$(document).ready(function() {
-		
-		$('#statistics').prop("disabled",true);
-		itemNumber = getItemNumber();
-		if ((itemNumber) > 2) {
-                $("#statistics").prop("disabled", false);
-            } 	
+	
+		$('#clear').click(function() {
+			localStorage.clear();
+		});
+	
+							
+		//event		
+		$('#submit').click(function() {
 			
 				
-		//event		
-		$('#submit').click(function(e) {
-			e.preventDefault();
-			
-		//validate form, if all the questions are answered			
-			if ($("input[name=question1]:checked").length > 0  &&
-				$("input[name=question2]:checked").length > 0  &&
-				$("input[name=question3]:checked").length > 0  &&
-				$("input[name=question4]:checked").length > 0  &&
-				$("input[name=question5]:checked").length > 0  &&
-				$("input[name=question6]:checked").length > 0 ){    						 
+			//validate form, if all the questions are answered			
+		if ($("input[name=question1]:checked").length > 0  &&
+			$("input[name=question2]:checked").length > 0  &&
+			$("input[name=question3]:checked").length > 0  &&
+			$("input[name=question4]:checked").length > 0  &&
+			$("input[name=question5]:checked").length > 0  &&
+			$("input[name=question6]:checked").length > 0 ){    						 
 			
 			//create JSON object  			
 				var answersObj = {
@@ -46,9 +46,18 @@
 				itemNumber = getItemNumber();
 				console.log(itemNumber);
 								
-				//store a stringified JSON object in local storage 				
-				localStorage.setItem('Answer_' + itemNumber, JSON.stringify(answersObj));
-			
+				//store a stringified JSON object in local storage 
+
+				try {
+				  localStorage.setItem('Answer_' + itemNumber, JSON.stringify(answersObj)); //saves to the database, "key", "value"
+				} catch (e) {
+				  if (e == QUOTA_EXCEEDED_ERR) {
+					alert('Quota exceeded!'); //data wasn't successfully saved due to quota exceed so throw an error
+				  }
+				}				
+				
+				
+						
 				//enable statistics button				
 				if ((itemNumber) > 2) {
 					$("#statistics").prop("disabled", false);
