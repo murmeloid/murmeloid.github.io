@@ -19,7 +19,7 @@ header {
 	z-index: 1;
 }
 
-form {
+form, #survey-results{
 	padding-top: 100px;
 }
 
@@ -34,7 +34,7 @@ input[type=submit]{
 }
 
 input[type=radio]{
-margin-left: 20px;
+	margin-left: 20px;
 }
 
 #survey div {
@@ -43,4 +43,9 @@ margin-left: 20px;
 
 #survey-form, #survey-results{
 	background: #fff;
+}
+
+#survey-results{
+	width:100%;
+	min-height:550px;
 }
