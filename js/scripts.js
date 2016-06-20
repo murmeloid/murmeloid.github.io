@@ -25,7 +25,7 @@
 		$('#submit').click(function(e) {
 			e.preventDefault();
 			
-			localStorage.clear();
+			//localStorage.clear();
 			
 			//validate form, if all the questions are answered			
 			if ($("input[name=question1]:checked").length > 0  &&
